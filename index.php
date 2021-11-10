@@ -11,8 +11,21 @@ $app->setBasePath('/Interface');
 
 $app->get('/', function (ServerRequestInterface $request,
     ResponseInterface $response) {
+
         $response->getBody()->write('Hello world!');
+
         return $response;
+
     });
+
+$app->get('/maidatum', function (ServerRequestInterface $request,
+        ResponseInterface $response) {
+
+            $datum = new DateTime();
+            $response->getBody()->write($datum->format(DateTime::ISO8601));
+
+            return $response;
+            
+        });
 
 $app->run();
