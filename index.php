@@ -22,7 +22,7 @@ $app->get('/maidatum', function (ServerRequestInterface $request,
         ResponseInterface $response) {
 
             $datum = new DateTime();
-            $response->getBody()->write($datum->format(DateTime::ISO8601));
+            $response->getBody()->write($datum->format('Y-m-d'));
 
             return $response;
             
