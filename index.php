@@ -48,4 +48,15 @@ $app->get('/lista', function (ServerRequestInterface $request,
             
         });
 
+$app->get('/api/lista', function (ServerRequestInterface $request,
+        ResponseInterface $response) {
+
+            $user = ['User1', 'User2'];
+            $userJson = json_encode($user);
+            $response->getBody()->write($userJson);
+
+            return $response->withHeader('Content-Type', 'application/json');
+            
+        });
+
 $app->run();
