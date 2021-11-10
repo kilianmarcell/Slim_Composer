@@ -28,4 +28,24 @@ $app->get('/maidatum', function (ServerRequestInterface $request,
             
         });
 
+$app->get('/lista', function (ServerRequestInterface $request,
+        ResponseInterface $response) {
+
+            $response->getBody()->write('
+            
+            <html>
+            <body>
+            <ul>
+            <li>Elso</li>
+            <li>Masodik</li>
+            </ul>
+            </body>
+            </html>
+            
+            ');
+
+            return $response;
+            
+        });
+
 $app->run();
