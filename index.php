@@ -61,4 +61,18 @@ $app->get('/api/lista', function (ServerRequestInterface $request,
             
         });
 
+$app->get('/api/lista/{id}', function (ServerRequestInterface $request,
+        ResponseInterface $response, array $args) {
+
+            $userId = $args['id'];
+            // userId validálás: szám-e...
+            $userek = ['User1', 'User2', 'User3'];
+            $user = $userek[$userId];
+            $userJson = json_encode(['user' => $user]);
+
+            $response->getBody()->write($userJson);
+            return $response->withHeader('Content-Type', 'application/json');
+            
+        });
+
 $app->run();
