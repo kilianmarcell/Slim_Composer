@@ -9,6 +9,7 @@ require 'vendor/autoload.php';
 $app = AppFactory::create();
 $app->setBasePath('/Interface');
 
+// Routing: Melyik végpont melyik végpontra menjen...
 $app->get('/', function (ServerRequestInterface $request,
     ResponseInterface $response) {
 
@@ -48,6 +49,7 @@ $app->get('/lista', function (ServerRequestInterface $request,
             
         });
 
+        // / után keretrendszerek elérése, ezek a végpontok/enpoints
 $app->get('/api/lista', function (ServerRequestInterface $request,
         ResponseInterface $response) {
 
